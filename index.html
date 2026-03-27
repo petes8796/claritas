@@ -86,7 +86,7 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 1.7;
-  color: #b3af9a;
+  color: #c2beaa;
   max-width: 520px;
   margin: 0 auto 2.5rem;
 }
@@ -136,26 +136,28 @@
     margin-bottom: 2rem;
   }
 
-  .problem-list {
-    list-style: none;
-  }
+ .problem-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
 
-  .problem-list li {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 400;
-    color: #c8c4b5;
-    padding: 1rem 0 1rem 1.5rem;
-    border-bottom: 0.5px solid rgba(232,228,218,0.08);
-    position: relative;
-  }
+.problem-list li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 12px;
+  color: #b3af9a;
+  font-size: 14px;
+  line-height: 1.8;
+}
 
-  .problem-list li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: #5e5c52;
-  }
+.problem-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #c9b97a;
+}
 
   .how-grid {
     display: grid;
@@ -312,7 +314,7 @@
   font-size: 14px;
   font-weight: 300;
   color: #8a8674;
-  line-height: 1.8;
+  line-height: 2;
 }
 
   .faq-item {
@@ -364,6 +366,7 @@
     section.content { padding: 2rem 1rem; }
     .hero { padding: 3rem 1rem 2rem; }
   }
+ 
 </style>
 </head>
 <body>
