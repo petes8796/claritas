@@ -10,6 +10,10 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+ html {
+  scroll-behavior: smooth;
+}
+ 
   body {
     font-family: 'DM Sans', sans-serif;
     background: #0b0b09;
@@ -75,6 +79,7 @@
     line-height: 1.15;
     color: #f0ece0;
     margin: 0 0 1.5rem;
+    letter-spacing: 0.02em;
   }
 
   h1 em {
@@ -86,7 +91,7 @@
   font-size: 16px;
   font-weight: 300;
   line-height: 1.7;
-  color: #c2beaa;
+  color: #9c9880;
   max-width: 520px;
   margin: 0 auto 2.5rem;
 }
@@ -110,7 +115,7 @@
 
   .cta-note {
     font-size: 12px;
-    color: #5e5c52;
+    color: #8f8c7a;
     margin-top: 0.75rem;
   }
 
@@ -192,7 +197,7 @@
   .how-desc {
     font-size: 12px;
     font-weight: 300;
-    color: #5e5c52;
+    color: #8f8c7a;
     line-height: 1.6;
   }
 
@@ -208,7 +213,13 @@
     padding: 1.5rem;
     border-radius: 2px;
     position: relative;
+    transition: all 0.3s ease;
   }
+
+.price-card:hover {
+  transform: translateY(-6px);
+  border-color: #c9b97a;
+}
 
   .price-card.featured {
     border-color: #c9b97a;
@@ -234,7 +245,7 @@
     font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: #5e5c52;
+    color: #8f8c7a;
     margin-bottom: 0.75rem;
   }
 
@@ -249,7 +260,7 @@
 
   .price-per {
     font-size: 14px;
-    color: #5e5c52;
+    color: #8f8c7a;
   }
 
 .price-desc {
@@ -275,9 +286,14 @@
   color: #9c9880;
   text-decoration: none;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
-  .price-btn:hover { background: rgba(232,228,218,0.05); }
+  .price-btn:hover {
+  background: rgba(232,228,218,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(201,185,122,0.2);
+}
 
   .price-btn.featured {
     background: #c9b97a;
@@ -306,7 +322,7 @@
   .quote-author {
     font-size: 12px;
     font-weight: 300;
-    color: #5e5c52;
+    color: #8f8c7a;
     letter-spacing: 0.05em;
   }
 
@@ -355,7 +371,7 @@
   .footer-tagline {
     font-size: 12px;
     font-weight: 300;
-    color: #5e5c52;
+    color: #8f8c7a;
     letter-spacing: 0.05em;
   }
 
