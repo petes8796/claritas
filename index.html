@@ -4,499 +4,167 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claritas — One Call. One Solution. No Confusion.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: #0b0b09;
-    color: #e8e4da;
-    min-height: 100vh;
-  }
-
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    border-bottom: 0.5px solid rgba(232,228,218,0.12);
-    position: sticky;
-    top: 0;
-    background: #0b0b09;
-    z-index: 100;
-  }
-
-  .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #c9b97a;
-  }
-
-  .nav-cta {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #0b0b09;
-    background: #c9b97a;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 2px;
-    text-decoration: none;
-  }
-
-  .hero {
-    padding: 5rem 2rem 4rem;
-    max-width: 680px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .eyebrow {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #c9b97a;
-    margin-bottom: 1.5rem;
-  }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 7vw, 58px);
-    font-weight: 400;
-    line-height: 1.15;
-    color: #f0ece0;
-    margin: 0 0 1.5rem;
-  }
-
-  h1 em {
-    font-style: italic;
-    color: #c9b97a;
-  }
-
-.subtext {
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: #c2beaa;
-  max-width: 520px;
-  margin: 0 auto 2.5rem;
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0b0b09;
+  color: #e8e4da;
 }
 
-  .btn-primary {
-    display: inline-block;
-    background: #c9b97a;
-    color: #0b0b09;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    padding: 16px 36px;
-    border: none;
-    cursor: pointer;
-    border-radius: 2px;
-    text-decoration: none;
-  }
-
-  .btn-primary:hover { background: #d4c78a; }
-
-  .cta-note {
-    font-size: 12px;
-    color: #5e5c52;
-    margin-top: 0.75rem;
-  }
-
-  .divider {
-    width: 40px;
-    height: 0.5px;
-    background: rgba(201,185,122,0.3);
-    margin: 3rem auto;
-  }
-
-  section.content {
-    padding: 3rem 2rem;
-    max-width: 680px;
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #c9b97a;
-    margin-bottom: 2rem;
-  }
-
- .problem-list {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 0.5px solid rgba(232,228,218,0.12);
 }
 
-.problem-list li {
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 12px;
-  color: #b3af9a;
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.problem-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  top: 0;
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
   color: #c9b97a;
 }
 
-  .how-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: rgba(232,228,218,0.08);
-    border: 0.5px solid rgba(232,228,218,0.08);
-    margin-top: 1.5rem;
-  }
-
-  .how-item {
-    background: #0b0b09;
-    padding: 1.5rem;
-  }
-
-  .how-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 400;
-    color: rgba(201,185,122,0.2);
-    line-height: 1;
-    margin-bottom: 0.75rem;
-  }
-
-  .how-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: #e8e4da;
-    margin-bottom: 0.5rem;
-  }
-
-  .how-desc {
-    font-size: 12px;
-    font-weight: 300;
-    color: #5e5c52;
-    line-height: 1.6;
-  }
-
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-
-  .price-card {
-    border: 0.5px solid rgba(232,228,218,0.1);
-    padding: 1.5rem;
-    border-radius: 2px;
-    position: relative;
-  }
-
-  .price-card.featured {
-    border-color: #c9b97a;
-  }
-
-  .featured-badge {
-    position: absolute;
-    top: -1px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #c9b97a;
-    color: #0b0b09;
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    white-space: nowrap;
-  }
-
-  .price-label {
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #5e5c52;
-    margin-bottom: 0.75rem;
-  }
-
-  .price-amount {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 500;
-    color: #f0ece0;
-    line-height: 1;
-    margin-bottom: 0.25rem;
-  }
-
-  .price-per {
-    font-size: 14px;
-    color: #5e5c52;
-  }
-
-.price-desc {
-  font-size: 11px;
-  font-weight: 300;
-  color: #8f8b78;
-  margin: 0.5rem 0 1.25rem;
-  line-height: 1.5;
-}
-
- .price-btn {
-  display: inline-block;
-  width: auto;
+.nav-cta {
+  background: #c9b97a;
+  color: #0b0b09;
   padding: 10px 20px;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px;
-  background: transparent;
-  border: 0.5px solid rgba(232,228,218,0.2);
-  color: #9c9880;
   text-decoration: none;
+}
+
+.hero {
+  padding: 5rem 2rem;
   text-align: center;
+  max-width: 680px;
+  margin: auto;
 }
 
-  .price-btn:hover { background: rgba(232,228,218,0.05); }
-
-  .price-btn.featured {
-    background: #c9b97a;
-    border-color: #c9b97a;
-    color: #0b0b09;
-  }
-
-  .price-btn.featured:hover { background: #d4c78a; }
-
-  .testimonial-block {
-    border-left: 2px solid #c9b97a;
-    padding: 1.5rem 0 1.5rem 1.5rem;
-    margin: 2rem 0;
-  }
-
-  .quote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 400;
-    color: #c8c4b5;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-
-  .quote-author {
-    font-size: 12px;
-    font-weight: 300;
-    color: #5e5c52;
-    letter-spacing: 0.05em;
-  }
-
-.body-text {
-  font-size: 14px;
-  font-weight: 300;
-  color: #8a8674;
-  line-height: 2;
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  margin-bottom: 1rem;
 }
 
-  .faq-item {
-    border-bottom: 0.5px solid rgba(232,228,218,0.08);
-    padding: 1.25rem 0;
-  }
-
-  .faq-q {
-    font-size: 15px;
-    font-weight: 400;
-    color: #e8e4da;
-    margin-bottom: 0.5rem;
-  }
-
-.faq-a {
-  font-size: 13px;
-  font-weight: 300;
-  color: #8a8674;
-  line-height: 1.7;
+.subtext {
+  color: #9c9880;
+  margin-bottom: 2rem;
 }
 
-  footer {
-    border-top: 0.5px solid rgba(232,228,218,0.08);
-    padding: 2.5rem 2rem;
-    text-align: center;
-  }
+.btn-primary {
+  background: #c9b97a;
+  color: #0b0b09;
+  padding: 14px 32px;
+  text-decoration: none;
+}
 
-  .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: #c9b97a;
-    margin-bottom: 0.5rem;
-  }
+.section {
+  max-width: 680px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
 
-  .footer-tagline {
-    font-size: 12px;
-    font-weight: 300;
-    color: #5e5c52;
-    letter-spacing: 0.05em;
-  }
+.problem-list {
+  list-style: none;
+}
 
-  @media (max-width: 600px) {
-    .how-grid { grid-template-columns: 1fr; }
-    .pricing-grid { grid-template-columns: 1fr; }
-    nav { padding: 1.25rem 1rem; }
-    section.content { padding: 2rem 1rem; }
-    .hero { padding: 3rem 1rem 2rem; }
-  }
- 
+.problem-list li {
+  padding: 10px 0;
+  color: #c8c4b5;
+}
+
+.pricing {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.card {
+  flex: 1;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 1.5rem;
+}
+
+.card.featured {
+  border-color: #c9b97a;
+}
+
+.price {
+  font-size: 28px;
+}
+
+.price-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border: 1px solid #999;
+  text-decoration: none;
+  color: #999;
+}
+
+.price-btn.featured {
+  background: #c9b97a;
+  color: black;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+}
 </style>
 </head>
+
 <body>
 
 <nav>
-  <div class="logo">Claritas</div>
- <a href="https://getproof.gumroad.com/l/clarity-session" class="nav-cta">Book a session</a>
+<div class="logo">Claritas</div>
+<a href="https://getproof.gumroad.com/l/clarity-session" class="nav-cta">Book a session</a>
 </nav>
 
 <section class="hero">
-  <p class="eyebrow">Private Advisory · Global · AI-Augmented</p>
-  <h1>You have the problem.<br><em>One call.</em> You'll have the answer.</h1>
-  <p class="subtext">Bring me your hardest business, trading, strategy, or life decision. In 45 minutes, you'll leave with a clear action plan — built with real experience and AI precision, live on the call.</p>
+<h1>You have the problem.<br><em>One call.</em> You'll have the answer.</h1>
+<p class="subtext">Bring your hardest problem. Leave with a clear plan.</p>
 <a href="https://getproof.gumroad.com/l/clarity-session" class="btn-primary">Book your clarity session</a>
-  <p class="cta-note">$97 · 45 minutes · No fluff · Worldwide</p>
 </section>
 
-<div class="divider"></div>
-
-<section class="content">
-  <p class="section-label">Who this is for</p>
-  <ul class="problem-list">
-    <li>You're stuck on a business decision and need someone to think through it with you</li>
-    <li>You're trading but your strategy has gaps you can't name</li>
-    <li>You have an idea but can't see the path from zero to revenue</li>
-    <li>You're facing a life or career pivot and need brutal clarity</li>
-    <li>You've read everything. You just need someone to apply it to your situation</li>
-  </ul>
+<section class="section">
+<ul class="problem-list">
+<li>You're stuck on a business decision</li>
+<li>Your trading strategy has gaps</li>
+<li>You have an idea but no execution path</li>
+<li>You're facing a life pivot</li>
+<li>You need clarity, not more information</li>
+</ul>
 </section>
 
-<div class="divider"></div>
+<section class="pricing">
 
-<section class="content">
-  <p class="section-label">How it works</p>
-  <div class="how-grid">
-    <div class="how-item">
-      <div class="how-num">01</div>
-      <div class="how-title">You describe the problem</div>
-      <div class="how-desc">Submit a short form before the call. Be specific. The more context, the sharper the session.</div>
-    </div>
-    <div class="how-item">
-      <div class="how-num">02</div>
-      <div class="how-title">We go deep for 45 min</div>
-      <div class="how-desc">A live private call. I use real-world experience and AI tools in real time to break down your situation.</div>
-    </div>
-    <div class="how-item">
-      <div class="how-num">03</div>
-      <div class="how-title">You leave with a plan</div>
-      <div class="how-desc">Not a 90-page report. An exact next step. Something you can execute the same day.</div>
-    </div>
-  </div>
-</section>
-
-<div class="pricing-grid">
-
-  <!-- 1 -->
-  <div class="price-card featured">
-    <div class="featured-badge">Most popular</div>
-    <div class="price-label">Clarity Session</div>
-    <div class="price-amount">$97</div>
-    <div class="price-desc">One focused 45-min private call. One problem. One action plan.</div>
-    <a href="https://getproof.gumroad.com/l/clarity-session" class="price-btn featured">Book now →</a>
-  </div>
-
-  <!-- 2 -->
-  <div class="price-card">
-    <div class="price-label">Deep Clarity Pack</div>
-    <div class="price-amount">$247</div>
-    <div class="price-desc">3 sessions. For problems that need follow-through, not just a plan.</div>
-    <a href="https://getproof.gumroad.com/l/deep-clarity-pack" class="price-btn">Get the pack →</a>
-  </div>
-
-  <!-- 3 -->
-  <div class="price-card">
-    <div class="price-label">Strategic Retainer</div>
-    <div class="price-amount">$397<span class="price-per">/mo</span></div>
-    <div class="price-desc">4 sessions per month. Max 5 clients. For people who want an advisor on speed dial.</div>
-    <a href="mailto:proofapp.official@gmail.com" class="price-btn">Inquire →</a>
-  </div>
-
+<div class="card featured">
+<div class="price">$97</div>
+<p>Clarity Session</p>
+<a href="https://getproof.gumroad.com/l/clarity-session" class="price-btn featured">Book now</a>
 </div>
-  </div>
-  <p class="cta-note" style="text-align:center;margin-top:1.25rem">All sessions conducted via Google Meet · Secure payment via Gumroad · Global clients welcome</p>
-</section>
 
-<div class="divider"></div>
+<div class="card">
+<div class="price">$247</div>
+<p>Deep Clarity Pack</p>
+<a href="https://getproof.gumroad.com/l/deep-clarity-pack" class="price-btn">Get the pack</a>
+</div>
 
-<section class="content">
-  <p class="section-label">Why this is different</p>
-  <div class="testimonial-block">
-    <p class="quote">"Most consultants sell you frameworks. I sell you a decision. There's a difference."</p>
-    <p class="quote-author">— Peter, Founder of Claritas</p>
-  </div>
-  <p class="body-text">I'm not a firm. I don't have junior analysts who'll prep a deck and present it to you as if they understand your situation. It's just me — someone who has navigated trading accounts, built brands from zero, made expensive mistakes, and learned to think through complex problems fast. The AI tools I bring to the call are the edge. You get the combination: lived experience + real-time intelligence. That's what a $50,000/year consultant should give you. You're getting it in 45 minutes.</p>
-</section>
+<div class="card">
+<div class="price">$397/mo</div>
+<p>Strategic Retainer</p>
+<a href="mailto:proofapp.official@gmail.com" class="price-btn">Inquire</a>
+</div>
 
-<div class="divider"></div>
-
-<section class="content">
-  <p class="section-label">Questions</p>
-  <div class="faq-item">
-    <p class="faq-q">What kind of problems can I bring?</p>
-    <p class="faq-a">Anything: trading strategy, business model validation, pricing decisions, content strategy, life/career decisions, side hustle ideas. The more specific, the better the outcome.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">What if I'm not happy with the session?</p>
-    <p class="faq-a">If the session doesn’t provide value, reach out and your case will be reviewed personally.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">How do I book after payment?</p>
-    <p class="faq-a">After payment, you'll be redirected immediately to a booking link. Pick a slot that works for you, fill the pre-call form, and show up.</p>
-  </div>
-  <div class="faq-item">
-    <p class="faq-q">What timezone do you work in?</p>
-    <p class="faq-a">India (IST), but I take calls from clients globally. The booking system shows available slots in your local time automatically.</p>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<section class="content" style="text-align:center">
-  <p class="eyebrow">Limited availability</p>
-  <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,5vw,40px);font-weight:400;color:#f0ece0;margin:0 0 1rem">Ready to stop being stuck?</h2>
-  <p class="subtext">45 minutes. One clear plan. No fluff, no follow-up pitch.</p>
-<a href="https://getproof.gumroad.com/l/clarity-session" class="btn-primary">Book your clarity session — $97</a>
 </section>
 
 <footer>
-  <div class="footer-logo">Claritas</div>
-  <p class="footer-tagline">One call. One solution. No confusion.</p>
+<p>Claritas — One call. One solution.</p>
 </footer>
 
 </body>
