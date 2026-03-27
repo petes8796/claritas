@@ -154,29 +154,40 @@
   .section-label {
     font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #c9b97a;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
  .problem-list {
   list-style: none;
   padding: 0;
   margin-top: 1.5rem;
+  margin: 0 auto;
+  max-width: 720px;
 }
 
 .problem-list li {
   position: relative;
-  padding-left: 18px;
-  margin-bottom: 12px;
-  color: #b3af9a;
-  font-size: 18px;
-  line-height: 1.9;
+  padding-left: 0;
+  margin-bottom: 22px;
+  color: #cfcbb8;
+  font-size: 19px;
+  line-height: 1.85;
+  font-weight: 300;
+  border-bottom: 1px solid rgba(232,228,218,0.06);
+  padding-bottom: 14px;
+  transition: all 0.3s ease;
+}
+
+ .problem-list li:hover {
+  color: #e8e4da;
+  transform: translateX(6px);
 }
 
 .problem-list li::before {
-  content: "•";
+  content: none;
   position: absolute;
   left: 0;
   top: 0;
