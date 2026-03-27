@@ -10,16 +10,31 @@
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
+
 body {
   font-family: 'DM Sans', sans-serif;
   background: #0b0b09;
   color: #e8e4da;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* subtle glow */
+body::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,185,122,0.08), transparent);
+  top: -150px;
+  left: -150px;
+  z-index: -1;
+}
+
+/* nav */
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 1.5rem 2rem;
   border-bottom: 0.5px solid rgba(232,228,218,0.12);
 }
@@ -37,6 +52,7 @@ nav {
   text-decoration: none;
 }
 
+/* hero */
 .hero {
   padding: 5rem 2rem;
   text-align: center;
@@ -46,12 +62,12 @@ nav {
 
 h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
+  font-size: clamp(36px,6vw,58px);
   margin-bottom: 1rem;
 }
 
 .subtext {
-  color: #9c9880;
+  color: #b3af9a;
   margin-bottom: 2rem;
 }
 
@@ -60,23 +76,41 @@ h1 {
   color: #0b0b09;
   padding: 14px 32px;
   text-decoration: none;
+  transition: all .3s ease;
 }
 
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(201,185,122,0.2);
+}
+
+/* section */
 .section {
   max-width: 680px;
   margin: 3rem auto;
   padding: 0 2rem;
 }
 
+/* list */
 .problem-list {
   list-style: none;
 }
 
 .problem-list li {
   padding: 10px 0;
-  color: #c8c4b5;
+  color: #cfcab8;
+  position: relative;
+  padding-left: 18px;
 }
 
+.problem-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #c9b97a;
+}
+
+/* pricing */
 .pricing {
   display: flex;
   gap: 1rem;
@@ -87,6 +121,12 @@ h1 {
   flex: 1;
   border: 1px solid rgba(255,255,255,0.1);
   padding: 1.5rem;
+  transition: .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #c9b97a;
 }
 
 .card.featured {
@@ -101,14 +141,31 @@ h1 {
   display: inline-block;
   margin-top: 1rem;
   padding: 10px 20px;
-  border: 1px solid #999;
+  border: 1px solid #888;
   text-decoration: none;
-  color: #999;
+  color: #aaa;
+  transition: .3s ease;
+}
+
+.price-btn:hover {
+  transform: translateY(-2px);
 }
 
 .price-btn.featured {
   background: #c9b97a;
   color: black;
+}
+
+/* fade animation */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .8s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -125,13 +182,13 @@ footer {
 <a href="https://getproof.gumroad.com/l/clarity-session" class="nav-cta">Book a session</a>
 </nav>
 
-<section class="hero">
+<section class="hero fade">
 <h1>You have the problem.<br><em>One call.</em> You'll have the answer.</h1>
 <p class="subtext">Bring your hardest problem. Leave with a clear plan.</p>
 <a href="https://getproof.gumroad.com/l/clarity-session" class="btn-primary">Book your clarity session</a>
 </section>
 
-<section class="section">
+<section class="section fade">
 <ul class="problem-list">
 <li>You're stuck on a business decision</li>
 <li>Your trading strategy has gaps</li>
@@ -141,7 +198,7 @@ footer {
 </ul>
 </section>
 
-<section class="pricing">
+<section class="pricing fade">
 
 <div class="card featured">
 <div class="price">$97</div>
@@ -166,6 +223,16 @@ footer {
 <footer>
 <p>Claritas — One call. One solution.</p>
 </footer>
+
+<script>
+const obs = new IntersectionObserver(e=>{
+e.forEach(entry=>{
+if(entry.isIntersecting) entry.target.classList.add('show')
+})
+})
+
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el))
+</script>
 
 </body>
 </html>
